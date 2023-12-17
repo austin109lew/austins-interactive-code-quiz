@@ -1,0 +1,45 @@
+/* Quiz container */
+#question-container {
+    margin: 20px;
+  }
+  
+  /* Quiz question */
+  #question-text {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  /* Answer options */
+  #answer-options {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #answer-options li {
+    margin-bottom: 10px;
+  }
+  
+  .answer-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .answer-btn:hover {
+    background-color: #e0e0e0;
+  }
+  
+  /* Score and timer display */
+  #score-container {
+    margin: 20px;
+  }
+  
+  #score, #timer {
+    font-size: 16px;
+    font-weight: bold;
+  }

@@ -3,20 +3,52 @@ const questionText = document.getElementById('question-text');
 const answerOptions = document.getElementById('answer-options');
 const scoreDisplay = document.getElementById('score');
 const timerDisplay = document.getElementById('timer');
+const startButton = document.getElementById('start-button');
+const questionContainer = document.getElementById('question-container');
+const scoreContainer = document.getElementById('score-container');
 
-// Array of quiz questions
+// Start Button
+startButton.addEventListener('click', startQuiz);
+
+function startQuiz() {
+  // Hide the start button
+  startButton.style.display = 'none';
+  
+  // Show the question container
+  questionContainer.style.display = 'block';
+
+  // Call the necessary functions to start the quiz
+  displayQuestion();
+  startTimer();
+}
+
+// Quiz Questions
 const quizQuestions = [
   {
-    question: 'What is the capital of France?',
-    options: ['Paris', 'London', 'Berlin', 'Madrid'],
-    correctAnswer: 'Paris'
-  },
-  // Add more questions here...
-  {
-    question: 'What is the capital of France?',
-    options: ['Paris', 'London', 'Austin', 'Madrid'],
-    correctAnswer: 'Paris'
-  },
+  question: 'Commonly used data types DO NOT include:',               
+  options: ['strings', 'booleans', 'alerts', 'numbers'],
+  correctAnswer: 'strings' 
+},
+{ 
+  question: 'The condition in an if / else statement is enclosed within _____.',
+options: ['quotes', 'curly brackets', 'parentheses', 'square brackets'],
+correctAnswer: 'quotes' 
+},
+{
+   question: 'Arrays in JavaScript can be used to store ____.',
+options: ['numbers and strings', 'other arrays', 'booleans', 'all of the above'],
+correctAnswer: 'numbers and strings' 
+},
+{ 
+  question: 'String values must be enclosed within ____ when being assigned to variables',
+options: ['commas', 'curly brackets', 'quotes', 'parentheses'],
+correctAnswer: 'commas' 
+},
+{ 
+  question: 'A very useful tool used during development and debugging for printing content to the debugger is:',
+options: ['JavaScript', 'terminal / bash', 'for loops', 'console.log'],
+correctAnswer: 'JavaScript' 
+},
 ];
 
 // Initialize variables
@@ -28,7 +60,7 @@ let timer;
 function displayQuestion() {
   const currentQuestion = quizQuestions[currentQuestionIndex];
   questionText.textContent = `Question ${currentQuestionIndex + 1}: ${currentQuestion.question}`;
-
+  
   answerOptions.innerHTML = '';
   currentQuestion.options.forEach(option => {
     const li = document.createElement('li');
@@ -94,5 +126,3 @@ function endQuiz() {
 answerOptions.addEventListener('click', handleAnswerClick);
 
 // Start the quiz
-displayQuestion();
-startTimer();

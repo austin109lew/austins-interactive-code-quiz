@@ -9,13 +9,20 @@
     #score-container {
       display: none;
     }
-  
+    #score-container {
+      margin: 20px;
+    }
+    #score,
+    #timer {
+      font-size: 16px;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
   <h1>JavaScript Quiz</h1>
   <button id="start-button">Start Quiz</button>
-
+  <span id="timer-display" style="position: absolute; top: 10px; right: 10px;"></span>
   <div id="question-container">
     <p id="question-text">Commonly used data types DO NOT include:</p>
     <ul id="answer-options">
@@ -25,7 +32,6 @@
       <li><button class="answer-btn">numbers</button></li>
     </ul>
   </div>
-
   <div id="score-container">
     <p>Score: <span id="score">0</span></p>
     <p>Time Left: <span id="timer">60</span> seconds</p>
